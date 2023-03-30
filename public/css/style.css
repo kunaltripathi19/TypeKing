@@ -13,7 +13,10 @@ body{
   justify-content: center;
   min-height: 100vh;
   background: #17A2B8;
+  background-image: url("/images/keyboeard.jpg");
+
 }
+
 ::selection{
   color: #fff;
   background: #17A2B8;
