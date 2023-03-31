@@ -6,6 +6,8 @@ const bcrypt = require('bcrypt');
 const mongoose = require('mongoose')
 const session = require("express-session")
 const bodyParser = require('body-parser')
+require("dotenv").config();
+const mongo = process.env.mongo;
 const Schema = mongoose.Schema
 const saltRounds = 10;
 
@@ -13,7 +15,7 @@ const saltRounds = 10;
 
 homeRouter.use(bodyParser.urlencoded({ extended: true }))
 
-mongoose.connect("mongodb://localhost:27017",{useNewUrlParser: true})
+mongoose.connect(mongo,{useNewUrlParser: true})
 const userSchema = new Schema({
   username: {type:String, unique:true},
   password: String, 
